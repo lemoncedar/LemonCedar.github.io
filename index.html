@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111114" />
+    <title>lemon sushi</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <video class="background-video" muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      <div class="background-wash" aria-hidden="true"></div>
+      <div class="grain" aria-hidden="true"></div>
+
+      <div class="top-stats" aria-label="Site statistics">
+        <p class="visitor-counter"><span class="stat-label">visitors</span><strong id="visitor-count" aria-live="polite">—</strong></p>
+        <p class="new-year-countdown"><span class="stat-label">until 2027</span><strong id="new-year-countdown" aria-live="off">loading…</strong></p>
+      </div>
+
+      <section class="loading-screen" id="loading-screen" aria-label="Loading site">
+        <div class="loader-content">
+          <p class="loading-mark">LS</p>
+          <div class="loading-track" role="progressbar" aria-label="Loading" aria-valuemin="0" aria-valuemax="100">
+            <span class="loading-progress" id="loading-progress"></span>
+          </div>
+          <p class="loading-status" id="loading-status">preparing a small corner of the internet</p>
+        </div>
+      </section>
+
+      <section class="enter-screen" id="enter-screen" aria-label="Enter site">
+        <button class="enter-button" id="enter-button" type="button">
+          <span class="enter-dot" aria-hidden="true"></span>
+          <span>click to enter</span>
+          <small>sound on</small>
+        </button>
+      </section>
+
+      <section class="landing" id="landing" aria-label="Lemon Sushi landing page">
+        <div class="glass-panel">
+          <div class="glass-highlight" aria-hidden="true"></div>
+          <div class="profile">
+            <div class="avatar-wrap">
+              <img src="avatar/images%20(1).jpg" alt="Lemon Sushi" class="avatar" />
+            </div>
+            <h1>lemon sushi</h1>
+            <p class="intro">welcome to my little world</p>
+          </div>
+
+          <nav class="navigation" aria-label="Main navigation">
+            <a class="nav-link about-link" href="#about">
+              <span>about myself</span><span class="arrow" aria-hidden="true">↓</span>
+            </a>
+            <a class="nav-link social-link" href="#socials">
+              <span>socials</span><span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="nav-link favourites-link" href="#favourites">
+              <span>my fav &amp; honourable mentions</span><span class="arrow" aria-hidden="true">←</span>
+            </a>
+          </nav>
+          <p class="footer-note">© <span id="year"></span> lemon sushi</p>
+        </div>
+
+        <section class="music-island" aria-label="Background music player">
+          <button class="music-toggle" id="music-toggle" type="button" aria-label="Play background music">
+            <span class="play-icon" aria-hidden="true">▶</span>
+          </button>
+          <div class="track-info">
+            <p class="track-label">now playing</p>
+            <p class="track-title" id="track-title">open hearts — the weeknd</p>
+            <div class="music-progress" aria-hidden="true"><span id="music-progress-fill"></span></div>
+            <p class="track-time"><span id="current-time">0:00</span><span id="total-time">0:00</span></p>
+          </div>
+          <div class="equalizer" id="equalizer" aria-label="Music visualizer" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <label class="volume-control" aria-label="Music volume">
+            <span aria-hidden="true">◖</span>
+            <input id="volume-control" type="range" min="0" max="100" value="26" aria-label="Music volume" />
+          </label>
+          <audio id="background-music" preload="metadata"></audio>
+        </section>
+      </section>
+
+      <section class="detail-page" id="detail-page" aria-live="polite" aria-hidden="true">
+        <div class="detail-panel">
+          <button class="back-button" id="back-button" type="button" aria-label="Return to home">← <span>home</span></button>
+          <p class="detail-kicker" id="detail-kicker"></p>
+          <h2 id="detail-title"></h2>
+          <p class="detail-copy" id="detail-copy"></p>
+          <div class="favourites-content" id="favourites-content" hidden></div>
+          <div class="social-links" id="social-links"></div>
+        </div>
+      </section>
+
+      <section class="game-screen" id="game-screen" aria-label="Asteroids game" aria-hidden="true" hidden>
+        <div class="game-splash" id="game-splash">
+          <p id="game-kicker">lemon arcade</p>
+          <h2 id="game-title">asteroids</h2>
+          <span>loading the void</span>
+        </div>
+        <canvas id="asteroids-canvas" aria-label="Asteroids game area"></canvas>
+        <div class="game-hud"><span>score <b id="game-score">000000</b></span><span>lives <b id="game-lives">3</b></span><span id="power-status" hidden>power <b id="power-time">5.0</b></span></div>
+        <p class="game-controls">← → rotate &nbsp; · &nbsp; ↑ thrust &nbsp; · &nbsp; space fire</p>
+        <div class="touch-controls" aria-label="Asteroids touch controls"><button data-key="ArrowLeft" type="button">←</button><button data-key="ArrowUp" type="button">↑</button><button data-key="ArrowRight" type="button">→</button><button data-key="fire" type="button">fire</button></div>
+        <button class="exit-game" id="exit-game" type="button">← back to favourites</button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
